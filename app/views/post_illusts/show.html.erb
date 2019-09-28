@@ -1,0 +1,7 @@
+<% @page_title = @post_illust.title + " - " + @post_illust.poster.name + "さんのイラスト" %>
+<h1><%= @post_illust.poster.name %>さんのイラスト</h1>
+<h2><%= @post_illust.title %></h2>
+
+<%= simple_format(@post_illust.body) %>
+
+<%= render "footer", post: @post_illust %>

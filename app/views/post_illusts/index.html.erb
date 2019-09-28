@@ -1,0 +1,18 @@
+<% @page_title = @member ? @member.name + "さんのイラスト一覧" : "みんなのイラスト一覧" %>
+<h1><%= @page_title %></h1>
+
+<% if current_member %>
+    <div class="toolbar"><%= link_to "イラスト新規追加", :new_post_illust %></div>
+<% end %>
+
+<% if @post_illusts.present? %>
+    <% @post_illusts.each do |post| %>
+    <h2><%= post.title %></h2>
+    <p><%= post.body %>
+        <%= link_to "もっと見る", post %></p>
+    <%= render "footer", post: post %>    
+    <% end %>
+    <%= paginate @post_illusts %>
+<% else %>
+    <p>イラストがありません。</p>
+<% end %>

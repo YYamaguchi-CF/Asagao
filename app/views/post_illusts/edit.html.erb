@@ -1,0 +1,9 @@
+<% @page_title = "イラスト投稿の編集" %>
+<h1><%= @page_title %></h1>
+
+<div class="toolbar"><%= link_to "イラスト一覧に戻る", :post_illusts %></div>
+
+<%= form_with model: @post_illust, local: true do |form| %>
+    <%= render "form", form: form %>
+    <div><%= form.submit %></div>
+<% end %>

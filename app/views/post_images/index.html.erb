@@ -1,0 +1,30 @@
+<% @page_title =  @post_illust.poster.name + "さんのイラスト一覧" %>
+<h1><%= @page_title %></h1>
+
+<ul class="toolbar">
+    <%= menu_link_to "みんなのイラスト一覧に戻る", post_illusts_path %>
+    <%= menu_link_to "イラスト追加", [:new, @post_illust, :pimage] %>
+</ul>
+
+<% if @pimages.present? %>
+    <table class="list">
+        <thread>
+            <tr>
+                <th>番号</th>
+                <th>イラスト</th>
+                <th>代替テキスト</th>
+                <th>操作</th>
+            </tr>
+        </thread>
+        <tbody>
+            <% @pimages.each_with_index do |pimage, index| %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= link_to image_tag(pimage.data.variant(resize: "100x>"), alt: pimage.alt_text), [@post_illust, :pimage] %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% else %>
+    <p>イラストがありません。</p>
+<% end %>

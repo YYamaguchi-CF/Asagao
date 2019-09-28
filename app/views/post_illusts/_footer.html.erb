@@ -1,0 +1,9 @@
+<ul class="entry-footer">
+    <% if current_member == post.poster %>
+        <%= menu_link_to "イラスト", [post, :pimages] %>
+        <%= menu_link_to "編集", [:edit, post] %>
+        <%= menu_link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+    <li>by <%= link_to post.poster.name, [post.poster, :post_illusts] %></li>
+    <li><%= post.posted_at.strftime("%Y/%m/%d %H:%M") %></li>
+</ul>

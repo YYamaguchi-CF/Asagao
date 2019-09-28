@@ -1,0 +1,7 @@
+<% @page_title = "イラスト投稿" %>
+<h1><%= @page_title %></h1>
+
+<%= form_with model: @post_illust, local: true do |form| %>
+    <%= render "form", form: form %>
+    <div><%= form.submit %></div>
+<% end %>
