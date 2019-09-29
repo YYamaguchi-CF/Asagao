@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+テストとしてブログアプリを開発しました。
 
-Things you may want to cover:
+Ruby
+2.5.1
 
-* Ruby version
+Rails
+5.2.3
 
-* System dependencies
+開発環境
+WSL Ubuntu 18.04.1
 
-* Configuration
+コーディング
+VS Code
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+データベース
+SQLite  3.22.0
